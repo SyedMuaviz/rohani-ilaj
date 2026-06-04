@@ -15,7 +15,7 @@ export default function CTA() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ type: "spring", stiffness: 80, damping: 15 }}
+          transition={{ duration: 0.6 , ease: "easeOut" }}
         >
           {/* Decorative geometric patterns */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none" />

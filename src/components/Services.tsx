@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Sparkles, HelpCircle, BookOpen, Clock, Users, ShieldAlert, ArrowUpRight } from "lucide-react";
 
 interface ServiceItem {
@@ -68,7 +68,7 @@ const services: ServiceItem[] = [
 ];
 
 export default function Services() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -78,14 +78,19 @@ export default function Services() {
     },
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 100, damping: 15 },
+  const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
     },
-  };
+  },
+};
 
   return (
     <section className="section-padding bg-[#F8FAFC] relative">

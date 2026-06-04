@@ -26,12 +26,12 @@ export default function DownloadAppPromo() {
 
           {/* iPhone Mockup Frame */}
           <motion.div
-            className="w-[280px] h-[560px] rounded-[50px] bg-emerald-950 p-3.5 shadow-2xl relative border-4 border-emerald-900 overflow-hidden"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", stiffness: 80, damping: 15 }}
-          >
+           className="w-[280px] h-[560px] rounded-[50px] bg-emerald-950 p-3.5 shadow-2xl relative border-4 border-emerald-900 overflow-hidden"
+           initial={{ opacity: 0, y: 50 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.6 }}
+           >
             {/* Dynamic Island Capsule */}
             <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-24 h-4 bg-black rounded-full z-30" />
 

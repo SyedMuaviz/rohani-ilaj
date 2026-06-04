@@ -155,7 +155,7 @@ const itemVariants: Variants = {
           className="lg:col-span-5 relative flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ type: "spring", stiffness: 80, damping: 20, delay: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
         >
           {/* Rotating Geometric Aura behind */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-spin-slow opacity-15">
