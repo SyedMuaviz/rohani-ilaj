@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link"; // Wait, in Next.js, Link is imported from "next/link", let me use "next/link".
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ArrowRight, Smartphone, Star, CheckCircle, ShieldCheck } from "lucide-react";
 
 export default function Hero() {
@@ -17,14 +17,21 @@ export default function Hero() {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 100, damping: 15 },
+ 
+
+const itemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
     },
-  };
+  },
+};
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-12 md:py-24 bg-gradient-to-br from-[#f5f8f7] via-emerald-50/20 to-[#FAF9F6]">
