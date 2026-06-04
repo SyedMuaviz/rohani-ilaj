@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { Book, Quote, ArrowLeft, ArrowRight } from "lucide-react";
 import { quotesData } from "@/data/quotesData";
 
@@ -27,24 +27,28 @@ export default function IslamicQuotes() {
   };
 
   const slideVariants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? 100 : -100,
-      opacity: 0,
-      scale: 0.95,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, type: "spring", stiffness: 120, damping: 18 },
+  enter: (dir: number) => ({
+    x: dir > 0 ? 100 : -100,
+    opacity: 0,
+    scale: 0.95,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
     },
-    exit: (dir: number) => ({
-      x: dir > 0 ? -100 : 100,
-      opacity: 0,
-      scale: 0.95,
-      transition: { duration: 0.3 },
-    }),
-  };
+  },
+  exit: (dir: number) => ({
+    x: dir > 0 ? -100 : 100,
+    opacity: 0,
+    scale: 0.95,
+    transition: {
+      duration: 0.3,
+    },
+  }),
+};
 
   const activeQuote = quotesData[index];
 
@@ -62,14 +66,13 @@ export default function IslamicQuotes() {
 
         {/* Carousel Content */}
         <div className="w-full relative min-h-[300px] flex items-center justify-center overflow-hidden">
-          <AnimatePresence mode="wait" custom={direction}>
-            <motion.div
-              key={activeQuote.id}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
+          <AnimatePresence mode="wait">
+            <motion.div 
+             key={activeQuote.id}
+             variants={slideVariants}
+             initial="enter"
+             animate="center"
+             exit="exit"
               className="w-full text-center space-y-6 flex flex-col items-center justify-center px-4"
             >
               {/* Giant quote icon */}
